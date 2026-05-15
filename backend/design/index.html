@@ -1,0 +1,829 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Remix Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              sky50: "#f0f9ff",
+              sky100: "#e0f2fe",
+              sky200: "#bae6fd",
+              sky300: "#7dd3fc",
+              sky400: "#38bdf8",
+              sky500: "#0ea5e9",
+              sky600: "#0284c7",
+              sky700: "#0369a1",
+              sky800: "#075985",
+              sky900: "#0c4a6e",
+            },
+
+            fontFamily: {
+              playfair: ["Playfair Display", "serif"],
+              dm: ["DM Sans", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <title>BASOBAS</title>
+  </head>
+
+  <body class="min-h-screen bg-sky50 font-dm text-slate-700">
+    <!-- ================= NAVBAR ================= -->
+
+    <nav
+      class="sticky top-0 z-50 flex h-[60px] items-center justify-between border-b border-sky200 bg-white/90 px-8 backdrop-blur-md max-md:h-auto max-md:flex-wrap max-md:px-4 max-md:py-3"
+    >
+      <!-- LOGO -->
+      <div
+        class="font-playfair text-[22px] font-semibold tracking-[-0.5px] text-sky700"
+      >
+        BASO<span class="text-sky400">BAS</span>
+      </div>
+
+      <!-- LINKS -->
+      <ul
+        class="flex list-none gap-8 max-md:mt-3 max-md:w-full max-md:justify-center max-md:gap-4"
+      >
+        <li>
+          <a
+            href="#"
+            class="text-[14px] text-slate-500 transition hover:text-sky600"
+          >
+            Explore
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#"
+            class="text-[14px] text-slate-500 transition hover:text-sky600"
+          >
+            List Room
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#"
+            class="text-[14px] text-slate-500 transition hover:text-sky600"
+          >
+            Services
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#"
+            class="text-[14px] text-slate-500 transition hover:text-sky600"
+          >
+            About
+          </a>
+        </li>
+      </ul>
+
+      <!-- ACTIONS -->
+      <div
+        class="flex items-center gap-3 max-md:mt-3 max-md:w-full max-md:justify-center"
+      >
+        <a
+          href="#"
+          class="rounded-full border border-sky300 px-4 py-[7px] text-[13px] font-medium text-sky700 transition hover:bg-sky100"
+        >
+          Login
+        </a>
+
+        <a
+          href="#"
+          class="rounded-full bg-sky500 px-5 py-[7px] text-[13px] font-medium text-white transition hover:bg-sky600"
+        >
+          Sign Up
+        </a>
+      </div>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+
+    <section
+      class="relative overflow-hidden bg-gradient-to-br from-sky600 via-sky400 to-sky200 px-8 py-[70px] pb-20 text-center max-md:px-4 max-md:py-12"
+    >
+      <!-- Decorative Circle -->
+      <div
+        class="absolute -right-20 -top-16 h-[340px] w-[340px] rounded-full bg-white/10"
+      ></div>
+
+      <div
+        class="absolute -bottom-20 -left-16 h-[260px] w-[260px] rounded-full bg-white/10"
+      ></div>
+
+      <!-- Badge -->
+      <div
+        class="relative z-10 mb-5 inline-block rounded-full border border-white/30 bg-white/20 px-4 py-1 text-[12px] font-medium uppercase tracking-[0.5px] text-white"
+      >
+        Room Rental & Booking
+      </div>
+
+      <!-- Heading -->
+      <h1
+        class="relative z-10 mb-4 font-playfair text-[44px] font-semibold leading-tight text-white max-lg:text-[34px] max-md:text-[28px] max-sm:text-[24px]"
+      >
+        Find your perfect <br />
+        room, effortlessly
+      </h1>
+
+      <!-- Paragraph -->
+      <p
+        class="relative z-10 mb-9 text-[16px] font-light text-white/85 max-md:text-[14px]"
+      >
+        Search thousands of verified rooms — for students, travelers, and
+        professionals
+      </p>
+
+      <!-- SEARCH BAR -->
+      <div
+        class="relative z-10 mx-auto flex max-w-[620px] items-center gap-2 rounded-full bg-white px-5 py-[6px] shadow-[0_4px_24px_rgba(3,105,161,0.18)] max-md:flex-col max-md:rounded-2xl max-md:p-3"
+      >
+        <!-- Search Icon -->
+        <i class="ri-search-line text-slate-400"></i>
+
+        <input
+          type="text"
+          placeholder="Search by location or room type..."
+          class="flex-1 bg-transparent text-[14px] outline-none"
+        />
+
+        <select
+          class="cursor-pointer border-l border-sky200 bg-transparent px-3 text-[13px] text-slate-500 outline-none max-md:w-full max-md:border-l-0 max-md:border-t max-md:pt-2"
+        >
+          <option>Any price</option>
+          <option>Under $500</option>
+          <option>$500 – $1000</option>
+          <option>$1000+</option>
+        </select>
+
+        <button
+          class="whitespace-nowrap rounded-full bg-sky500 px-6 py-2.5 text-[14px] font-medium text-white transition hover:bg-sky600 max-md:w-full"
+        >
+          Search rooms
+        </button>
+      </div>
+    </section>
+
+    <!-- ================= STATS ================= -->
+
+    <section class="flex flex-wrap justify-center bg-sky700">
+      <!-- ITEM -->
+      <div
+        class="flex-1 border-r border-white/10 px-3 py-5 text-center max-md:basis-1/2"
+      >
+        <span class="block font-playfair text-[24px] font-semibold text-sky200">
+          12k+
+        </span>
+
+        <span
+          class="mt-1 block text-[11px] uppercase tracking-[0.8px] text-white/60"
+        >
+          Listings
+        </span>
+      </div>
+
+      <!-- ITEM -->
+      <div
+        class="flex-1 border-r border-white/10 px-3 py-5 text-center max-md:basis-1/2"
+      >
+        <span
+          class="flex items-center justify-center gap-1 font-playfair text-[24px] font-semibold text-sky200"
+        >
+          4.8
+          <i class="ri-star-fill text-[18px] text-yellow-400"></i>
+        </span>
+
+        <span
+          class="mt-1 block text-[11px] uppercase tracking-[0.8px] text-white/60"
+        >
+          Avg rating
+        </span>
+      </div>
+
+      <!-- ITEM -->
+      <div
+        class="flex-1 border-r border-white/10 px-3 py-5 text-center max-md:basis-1/2"
+      >
+        <span class="block font-playfair text-[24px] font-semibold text-sky200">
+          98%
+        </span>
+
+        <span
+          class="mt-1 block text-[11px] uppercase tracking-[0.8px] text-white/60"
+        >
+          Verified owners
+        </span>
+      </div>
+
+      <!-- ITEM -->
+      <div class="flex-1 px-3 py-5 text-center max-md:basis-1/2">
+        <span class="block font-playfair text-[24px] font-semibold text-sky200">
+          24/7
+        </span>
+
+        <span
+          class="mt-1 block text-[11px] uppercase tracking-[0.8px] text-white/60"
+        >
+          Support
+        </span>
+      </div>
+    </section>
+
+    <!-- ================= FEATURED ================= -->
+
+    <section class="px-8 py-14 max-md:px-4">
+      <!-- HEADER -->
+      <div class="mb-7 flex items-baseline justify-between">
+        <h2 class="font-playfair text-[26px] font-semibold text-sky800">
+          Featured listings
+        </h2>
+
+        <a href="#" class="text-[13px] font-medium text-sky500"> View all → </a>
+      </div>
+
+      <!-- FILTERS -->
+      <div class="mb-6 flex flex-wrap gap-2">
+        <button
+          class="rounded-full border border-sky500 bg-sky500 px-4 py-1.5 text-[13px] font-medium text-white"
+        >
+          All rooms
+        </button>
+
+        <button
+          class="rounded-full border border-sky300 bg-white px-4 py-1.5 text-[13px] text-sky700 transition hover:bg-sky100"
+        >
+          Studio
+        </button>
+
+        <button
+          class="rounded-full border border-sky300 bg-white px-4 py-1.5 text-[13px] text-sky700 transition hover:bg-sky100"
+        >
+          Single bed
+        </button>
+
+        <button
+          class="rounded-full border border-sky300 bg-white px-4 py-1.5 text-[13px] text-sky700 transition hover:bg-sky100"
+        >
+          Shared
+        </button>
+      </div>
+
+      <!-- ROOM GRID -->
+      <div class="grid grid-cols-4 gap-4 max-lg:grid-cols-2 max-md:grid-cols-1">
+        <!-- CARD -->
+        <div
+          class="overflow-hidden rounded-2xl border border-sky200 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+        >
+          <!-- IMAGE -->
+          <div class="relative h-[220px] overflow-hidden">
+            <img
+              src="assets/Modern.avif"
+              alt=""
+              class="h-full w-full object-cover"
+            />
+
+            <!-- Badge -->
+            <span
+              class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[10px] font-medium uppercase tracking-wide text-sky700"
+            >
+              Featured
+            </span>
+
+            <!-- Favorite -->
+            <button
+              class="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-[15px] text-slate-600"
+            >
+              <i class="ri-heart-line"></i>
+            </button>
+          </div>
+
+          <!-- BODY -->
+          <div class="p-4">
+            <h3 class="mb-1 text-[15px] font-medium text-sky900">
+              Modern studio near metro
+            </h3>
+
+            <!-- LOCATION -->
+            <div
+              class="mb-3 flex items-center gap-1 text-[12px] text-slate-500"
+            >
+              <i class="ri-map-pin-line"></i>
+              Thamel, Kathmandu
+            </div>
+
+            <!-- FOOTER -->
+            <div class="flex items-center justify-between">
+              <div class="text-[16px] font-medium text-sky600">
+                $320
+                <span class="text-[11px] font-light text-slate-500">
+                  /month
+                </span>
+              </div>
+
+              <div class="flex items-center gap-1 text-[12px] text-slate-500">
+                <i class="ri-star-fill text-yellow-400"></i>
+                4.9
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD -->
+        <div
+          class="overflow-hidden rounded-2xl border border-sky200 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+        >
+          <div class="relative h-[220px] overflow-hidden">
+            <img
+              src="assets/cozy.avif"
+              alt=""
+              class="h-full w-full object-cover"
+            />
+
+            <span
+              class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[10px] font-medium uppercase tracking-wide text-sky700"
+            >
+              Popular
+            </span>
+
+            <button
+              class="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-[15px] text-slate-600"
+            >
+              <i class="ri-heart-line"></i>
+            </button>
+          </div>
+
+          <div class="p-4">
+            <h3 class="mb-1 text-[15px] font-medium text-sky900">
+              Cozy single room
+            </h3>
+
+            <div
+              class="mb-3 flex items-center gap-1 text-[12px] text-slate-500"
+            >
+              <i class="ri-map-pin-line"></i>
+              Lazimpat, Kathmandu
+            </div>
+
+            <div class="flex items-center justify-between">
+              <div class="text-[16px] font-medium text-sky600">
+                $210
+                <span class="text-[11px] font-light text-slate-500">
+                  /month
+                </span>
+              </div>
+
+              <div class="flex items-center gap-1 text-[12px] text-slate-500">
+                <i class="ri-star-fill text-yellow-400"></i>
+                4.7
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD -->
+        <div
+          class="overflow-hidden rounded-2xl border border-sky200 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+        >
+          <div class="relative h-[220px] overflow-hidden">
+            <img
+              src="assets/shared.avif"
+              alt=""
+              class="h-full w-full object-cover"
+            />
+
+            <span
+              class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[10px] font-medium uppercase tracking-wide text-sky700"
+            >
+              New
+            </span>
+
+            <button
+              class="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-[15px] text-slate-600"
+            >
+              <i class="ri-heart-line"></i>
+            </button>
+          </div>
+
+          <div class="p-4">
+            <h3 class="mb-1 text-[15px] font-medium text-sky900">
+              Shared apartment
+            </h3>
+
+            <div
+              class="mb-3 flex items-center gap-1 text-[12px] text-slate-500"
+            >
+              <i class="ri-map-pin-line"></i>
+              Patan, Lalitpur
+            </div>
+
+            <div class="flex items-center justify-between">
+              <div class="text-[16px] font-medium text-sky600">
+                $180
+                <span class="text-[11px] font-light text-slate-500">
+                  /month
+                </span>
+              </div>
+
+              <div class="flex items-center gap-1 text-[12px] text-slate-500">
+                <i class="ri-star-fill text-yellow-400"></i>
+                4.8
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD -->
+        <div
+          class="overflow-hidden rounded-2xl border border-sky200 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+        >
+          <div class="relative h-[220px] overflow-hidden">
+            <img
+              src="assets/budget.jpg"
+              alt=""
+              class="h-full w-full object-cover"
+            />
+
+            <span
+              class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[10px] font-medium uppercase tracking-wide text-sky700"
+            >
+              Verified
+            </span>
+
+            <button
+              class="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-[15px] text-slate-600"
+            >
+              <i class="ri-heart-line"></i>
+            </button>
+          </div>
+
+          <div class="p-4">
+            <h3 class="mb-1 text-[15px] font-medium text-sky900">
+              Budget room near college
+            </h3>
+
+            <div
+              class="mb-3 flex items-center gap-1 text-[12px] text-slate-500"
+            >
+              <i class="ri-map-pin-line"></i>
+              Kirtipur, Kathmandu
+            </div>
+
+            <div class="flex items-center justify-between">
+              <div class="text-[16px] font-medium text-sky600">
+                $95
+                <span class="text-[11px] font-light text-slate-500">
+                  /month
+                </span>
+              </div>
+
+              <div class="flex items-center gap-1 text-[12px] text-slate-500">
+                <i class="ri-star-fill text-yellow-400"></i>
+                4.5
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CHAT CTA -->
+    <div
+      class="mx-8 mb-9 flex items-center gap-4 rounded-[14px] border border-sky-200 bg-sky-100 px-[22px] py-5"
+    >
+      <!-- ICON -->
+      <div
+        class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-sky-200 text-[22px]"
+      >
+        <i class="ri-chat-3-fill"></i>
+      </div>
+
+      <!-- TEXT -->
+      <div>
+        <h3 class="mb-[3px] text-[15px] font-medium text-sky-800">
+          Chat with room owners directly
+        </h3>
+
+        <p class="text-[13px] font-light text-gray-500">
+          Ask questions, negotiate, and confirm your stay in real time
+        </p>
+      </div>
+
+      <!-- BUTTON -->
+      <button
+        class="ml-auto flex-shrink-0 whitespace-nowrap rounded-[20px] bg-sky-500 px-[18px] py-[9px] font-['DM_Sans'] text-[13px] font-medium text-white"
+      >
+        Start chatting
+      </button>
+    </div>
+    <!-- ================= FEATURES ================= -->
+
+    <section class="bg-sky700 px-8 py-[52px]">
+      <!-- TITLE -->
+      <h2
+        class="mb-[6px] text-center font-playfair text-[26px] font-semibold text-sky100"
+      >
+        Everything you need
+      </h2>
+
+      <!-- SUBTITLE -->
+      <p class="mb-8 text-center text-[14px] font-light text-white/55">
+        Powered by a modern MERN stack with real-time features
+      </p>
+
+      <!-- GRID -->
+      <div
+        class="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-[14px]"
+      >
+        <!-- CARD 1 -->
+        <div
+          class="rounded-[14px] border border-white/10 bg-white/10 px-4 py-5 text-center hover:bg-white/15 transition"
+        >
+          <div
+            class="mx-auto mb-3 flex h-[46px] w-[46px] items-center justify-center rounded-xl bg-sky600/30"
+          >
+            <i class="ri-search-eye-fill text-[20px] text-sky100"></i>
+          </div>
+          <div class="mb-1 text-[14px] font-medium text-sky100">
+            Smart search
+          </div>
+          <div class="text-[12px] font-light leading-[1.5] text-white/50">
+            Filter by price, location, amenities, and more
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div
+          class="rounded-[14px] border border-white/10 bg-white/10 px-4 py-5 text-center hover:bg-white/15 transition"
+        >
+          <div
+            class="mx-auto mb-3 flex h-[46px] w-[46px] items-center justify-center rounded-xl bg-sky600/30"
+          >
+            <i class="ri-shield-keyhole-fill text-[20px] text-sky100"></i>
+          </div>
+          <div class="mb-1 text-[14px] font-medium text-sky100">JWT Auth</div>
+          <div class="text-[12px] font-light leading-[1.5] text-white/50">
+            Secure login and registration for all users
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div
+          class="rounded-[14px] border border-white/10 bg-white/10 px-4 py-5 text-center hover:bg-white/15 transition"
+        >
+          <div
+            class="mx-auto mb-3 flex h-[46px] w-[46px] items-center justify-center rounded-xl bg-sky600/30"
+          >
+            <i class="ri-calendar-check-fill text-[20px] text-sky100"></i>
+          </div>
+          <div class="mb-1 text-[14px] font-medium text-sky100">
+            Booking system
+          </div>
+          <div class="text-[12px] font-light leading-[1.5] text-white/50">
+            Instant booking with calendar management
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div
+          class="rounded-[14px] border border-white/10 bg-white/10 px-4 py-5 text-center hover:bg-white/15 transition"
+        >
+          <div
+            class="mx-auto mb-3 flex h-[46px] w-[46px] items-center justify-center rounded-xl bg-sky600/30"
+          >
+            <i class="ri-notification-badge-fill text-[20px] text-sky100"></i>
+          </div>
+          <div class="mb-1 text-[14px] font-medium text-sky100">
+            Notifications
+          </div>
+          <div class="text-[12px] font-light leading-[1.5] text-white/50">
+            Real-time alerts via Socket.io
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div
+          class="rounded-[14px] border border-white/10 bg-white/10 px-4 py-5 text-center hover:bg-white/15 transition"
+        >
+          <div
+            class="mx-auto mb-3 flex h-[46px] w-[46px] items-center justify-center rounded-xl bg-sky600/30"
+          >
+            <i class="ri-settings-4-fill text-[20px] text-sky100"></i>
+          </div>
+          <div class="mb-1 text-[14px] font-medium text-sky100">
+            Admin panel
+          </div>
+          <div class="text-[12px] font-light leading-[1.5] text-white/50">
+            Full room, booking, and user management
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- HOW IT WORKS -->
+    <section class="bg-white px-8 py-[52px]">
+      <!-- TITLE -->
+      <h2
+        class="mb-9 text-center font-playfair text-[26px] font-semibold text-sky800"
+      >
+        How it works
+      </h2>
+
+      <!-- STEPS WRAPPER -->
+      <div class="mx-auto flex max-w-[640px] items-start gap-0">
+        <!-- STEP 1 -->
+        <div class="relative flex-1 px-[10px] text-center">
+          <!-- NUMBER -->
+          <div
+            class="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full border-2 border-sky300 bg-sky100 text-[16px] font-medium text-sky600"
+          >
+            1
+          </div>
+
+          <!-- TITLE -->
+          <div class="mb-1 text-[14px] font-medium text-sky800">
+            Create account
+          </div>
+
+          <!-- DESC -->
+          <div class="text-[12px] font-light leading-[1.5] text-gray-500">
+            Sign up and verify your identity securely
+          </div>
+
+          <!-- LINE -->
+          <div
+            class="absolute right-[-10px] top-5 h-[1px] w-[20px] bg-sky200"
+          ></div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="relative flex-1 px-[10px] text-center">
+          <div
+            class="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full border-2 border-sky300 bg-sky100 text-[16px] font-medium text-sky600"
+          >
+            2
+          </div>
+
+          <div class="mb-1 text-[14px] font-medium text-sky800">
+            Search rooms
+          </div>
+
+          <div class="text-[12px] font-light leading-[1.5] text-gray-500">
+            Browse and filter thousands of listings
+          </div>
+
+          <div
+            class="absolute right-[-10px] top-5 h-[1px] w-[20px] bg-sky200"
+          ></div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="relative flex-1 px-[10px] text-center">
+          <div
+            class="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full border-2 border-sky300 bg-sky100 text-[16px] font-medium text-sky600"
+          >
+            3
+          </div>
+
+          <div class="mb-1 text-[14px] font-medium text-sky800">
+            Chat & book
+          </div>
+
+          <div class="text-[12px] font-light leading-[1.5] text-gray-500">
+            Message the owner and confirm booking
+          </div>
+
+          <div
+            class="absolute right-[-10px] top-5 h-[1px] w-[20px] bg-sky200"
+          ></div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="flex-1 px-[10px] text-center">
+          <div
+            class="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full border-2 border-sky300 bg-sky100 text-[16px] font-medium text-sky600"
+          >
+            4
+          </div>
+
+          <div class="mb-1 text-[14px] font-medium text-sky800">Move in</div>
+
+          <div class="text-[12px] font-light leading-[1.5] text-gray-500">
+            Enjoy your new room with peace of mind
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-sky900 px-8 py-12 text-white/70">
+      <!-- TOP -->
+      <div class="flex flex-col gap-10 md:flex-row md:justify-between md:gap-0">
+        <!-- BRAND -->
+        <div class="max-w-sm">
+          <div class="mb-3 font-playfair text-[22px] font-semibold text-sky700">
+
+            BASO<span class="text-sky400">BAS</span>
+          </div>
+          <p class="text-[13px] font-light text-white/60 leading-[1.6]">
+            Room rental made simple. Find, book, and move in — all in one place.
+          </p>
+        </div>
+
+        <!-- COLUMN 1 -->
+        <div class="flex flex-col gap-2 text-[13px]">
+          <h4 class="mb-2 text-[14px] font-semibold text-white/60">Explore</h4>
+          <a href="#" class="text-white/70 hover:text-sky100 transition"
+            >Search rooms</a
+          >
+          <a href="#" class="text-white/70 hover:text-sky100 transition"
+            >View listings</a
+          >
+          <a href="#" class="text-white/70 hover:text-sky100 transition"
+            >Map view</a
+          >
+        </div>
+
+        <!-- COLUMN 2 -->
+        <div class="flex flex-col gap-2 text-[13px]">
+          <h4 class="mb-2 text-[14px] font-semibold text-white/60">Platform</h4>
+          <a href="#" class="text-white/70 hover:text-sky100 transition"
+            >List your room</a
+          >
+          <a href="#" class="text-white/70 hover:text-sky100 transition"
+            >Admin dashboard</a
+          >
+          <a href="#" class="text-white/70 hover:text-sky100 transition"
+            >Pricing</a
+          >
+        </div>
+
+        <!-- COLUMN 3 -->
+        <div class="flex flex-col gap-2 text-[13px]">
+          <h4 class="mb-2 text-[14px] font-semibold text-white/60">Company</h4>
+          <a href="#" class="text-white/70 hover:text-sky100 transition"
+            >About</a
+          >
+          <a href="#" class="text-white/70 hover:text-sky100 transition"
+            >Contact</a
+          >
+          <a href="#" class="text-white/70 hover:text-sky100 transition"
+            >Privacy policy</a
+          >
+        </div>
+      </div>
+
+      <!-- BOTTOM -->
+      <div
+        class="mt-10 flex flex-col items-center gap-3 border-t border-white/10 pt-6 text-center md:flex-row md:justify-between md:text-left"
+      >
+        <p class="text-[12px] text-white/60">
+          © 2026 BASOBAS. All rights reserved.
+        </p>
+
+        <div class="flex gap-2 flex-wrap justify-center md:justify-end">
+          <span
+            class="rounded-full bg-white/10 px-3 py-1 text-[11px] text-white/70"
+          >
+            MERN Stack
+          </span>
+          <span
+            class="rounded-full bg-white/10 px-3 py-1 text-[11px] text-white/70"
+          >
+            Socket.io
+          </span>
+          <span
+            class="rounded-full bg-white/10 px-3 py-1 text-[11px] text-white/70"
+          >
+            MongoDB
+          </span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
