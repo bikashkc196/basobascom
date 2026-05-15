@@ -17,7 +17,7 @@ app.use(cors());
 
 app.use("/api/rooms", roomRoutes); // routes bolauxa routes le controller ani controller le model
 app.use("/api/auth", authRoutes);
-app.use("/api/rooms", roomRoutes);
+
 
 app.listen(5000, () => {
   connectDB();
